@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfApp3.NewStudent"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="NewStudent" Height="418.8" Width="622.444" Background="#FFD4D4D6">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="DataTemplate.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <local:Student x:Key="NewStudent"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="297*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="293*"/>
+            <RowDefinition Height="127*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.RowSpan="2" Margin="0,0,0,-0.4" Background="#FFD4D4D6" RenderTransformOrigin="0.518,0.871">
+            <ContentControl Content="{StaticResource NewStudent}" Height="341" ContentTemplate="{StaticResource studentDataTemplate}" Margin="10,0,137,0" RenderTransformOrigin="0.499,-0.018"/>
+            <Grid Height="30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Content="OK" HorizontalAlignment="Center" Margin="23,6,0,5" VerticalAlignment="Center" Width="65" IsDefault="True" Click="OkButton_Click" BorderBrush="White" Foreground="Black" Background="White" Grid.Column="1"/>
+                <Button Content="Cancel" Grid.Column="2" HorizontalAlignment="Center" Margin="13,6,10,5" VerticalAlignment="Center" Width="65" IsCancel="True" Click="CancelButton_Click" BorderBrush="White" Background="White"/>
+            </Grid>
+        </StackPanel>
+
+    </Grid>
+</Window>
